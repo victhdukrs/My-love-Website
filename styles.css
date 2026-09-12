@@ -1,0 +1,1212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #493b43;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(225, 174, 193, 0.35), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(158, 190, 205, 0.30), transparent 30%),
+        #f8f1e9;
+    overflow-x: hidden;
+}
+
+/* Área principal */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pequenos círculos decorativos */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.hero::before {
+    width: 280px;
+    height: 280px;
+    background: rgba(216, 159, 181, 0.16);
+    top: -100px;
+    left: -100px;
+}
+
+.hero::after {
+    width: 350px;
+    height: 350px;
+    background: rgba(137, 176, 194, 0.13);
+    bottom: -160px;
+    right: -120px;
+}
+
+/* Tulipa */
+
+.flower {
+    font-size: 58px;
+    margin-bottom: 22px;
+    animation: floating 3s ease-in-out infinite;
+    filter: drop-shadow(0 8px 12px rgba(120, 80, 100, 0.15));
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+/* Texto pequeno */
+
+.small-text {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9b7181;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+/* Título */
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 0.98;
+    font-weight: 500;
+    color: #4b3b43;
+}
+
+h1 span {
+    color: #b56f89;
+}
+
+/* Subtítulo */
+
+.subtitle {
+    margin-top: 28px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #76666d;
+}
+
+/* Botão */
+
+#enterButton {
+    margin-top: 38px;
+    border: none;
+    background: #9f6179;
+    color: white;
+    padding: 16px 25px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(159, 97, 121, 0.25);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+#enterButton span {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.25s ease;
+}
+
+#enterButton:hover {
+    transform: translateY(-3px);
+    background: #8f536b;
+    box-shadow: 0 16px 35px rgba(159, 97, 121, 0.32);
+}
+
+#enterButton:hover span {
+    transform: translateX(5px);
+}
+
+#enterButton:active {
+    transform: scale(0.97);
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 30px 22px;
+    }
+
+    .flower {
+        font-size: 50px;
+        margin-bottom: 18px;
+    }
+
+    .small-text {
+        font-size: 10px;
+        letter-spacing: 2.2px;
+    }
+
+    h1 {
+        font-size: clamp(46px, 15vw, 65px);
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-top: 22px;
+    }
+
+    #enterButton {
+        width: 100%;
+        max-width: 280px;
+        padding: 16px 20px;
+        margin-top: 30px;
+    }
+}
+
+/* Carta */
+
+.letter-section {
+    min-height: 100vh;
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4ebe4;
+}
+
+.letter-card {
+    width: 100%;
+    max-width: 680px;
+    padding: 70px 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0 25px 70px rgba(91, 64, 76, 0.08);
+}
+
+.letter-small {
+    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a26d80;
+    font-weight: 600;
+}
+
+.letter-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.1;
+    font-weight: 500;
+    color: #4b3b43;
+    margin-bottom: 35px;
+}
+
+.letter-card p:not(.letter-small) {
+    max-width: 520px;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #76666d;
+}
+
+.letter-flower {
+    margin-top: 35px;
+    font-size: 35px;
+}
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        padding: 70px 20px;
+    }
+
+    .letter-card {
+        padding: 50px 25px;
+        border-radius: 24px;
+    }
+
+    .letter-card h2 {
+        font-size: 38px;
+    }
+
+    .letter-card p:not(.letter-small) {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+/* Nossa história */
+
+.story-section {
+    min-height: 100vh;
+    padding: 110px 24px;
+    background: #faf4ee;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a26d80;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 65px);
+    font-weight: 500;
+    color: #4b3b43;
+}
+
+.story-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.story-text {
+    position: relative;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 25px;
+    border: 1px solid rgba(190, 160, 170, 0.15);
+    box-shadow: 0 15px 40px rgba(91, 64, 76, 0.05);
+}
+
+.story-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ead1da;
+    color: #925d73;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.story-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #514049;
+    margin-bottom: 18px;
+}
+
+.story-text p {
+    color: #76666d;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.story-line {
+    width: 2px;
+    height: 45px;
+    background: #dec5cf;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+
+    .story-section {
+        padding: 80px 20px;
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+
+    .story-text {
+        padding: 28px 24px;
+    }
+
+    .story-text h3 {
+        font-size: 26px;
+    }
+
+    .story-text p {
+        font-size: 14px;
+    }
+}
+
+/* Nossas memórias */
+
+.memories-section {
+    min-height: 100vh;
+    padding: 110px 24px;
+    background: #f7eee8;
+}
+
+.memories-grid {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: auto auto;
+    gap: 22px;
+}
+
+.memory {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 18px 45px rgba(91, 64, 76, 0.10);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.memory:hover {
+    transform: translateY(-7px) rotate(-0.5deg);
+    box-shadow: 0 25px 55px rgba(91, 64, 76, 0.16);
+}
+
+.memory-large {
+    grid-row: span 2;
+}
+
+.memory img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.memory-large img {
+    min-height: 580px;
+}
+
+.memory:hover img {
+    transform: scale(1.04);
+}
+
+.memory-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 45px 22px 20px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(50, 35, 42, 0.70)
+    );
+
+    color: white;
+}
+
+.memory-caption span {
+    font-size: 20px;
+}
+
+.memory-caption p {
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Celular */
+
+@media (max-width: 650px) {
+
+    .memories-section {
+        padding: 80px 20px;
+    }
+
+    .memories-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .memory-large img,
+    .memory img {
+        min-height: 330px;
+        max-height: 430px;
+    }
+
+    .memory-caption {
+        padding-top: 55px;
+    }
+}
+
+/* Memória v2 */
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(45, 31, 38, 0.82);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal img {
+    max-width: min(900px, 92vw);
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+
+    transform: scale(0.92);
+
+    transition: transform 0.35s ease;
+}
+
+.image-modal.active img {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Cartinhas */
+
+.letters-section {
+    min-height: 100vh;
+    padding: 110px 24px;
+    background: #fbf3ed;
+}
+
+.letters-grid {
+    max-width: 950px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.letter-envelope {
+    padding: 45px 28px;
+
+    text-align: center;
+
+    background: #fffaf6;
+
+    border: 1px solid #eadbd3;
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(91, 64, 76, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.letter-envelope:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 22px 50px rgba(91, 64, 76, 0.13);
+}
+
+.envelope-icon {
+    font-size: 48px;
+    margin-bottom: 22px;
+
+    transition: transform 0.3s ease;
+}
+
+.letter-envelope:hover .envelope-icon {
+    transform: scale(1.12) rotate(5deg);
+}
+
+.letter-envelope h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: #514049;
+    margin-bottom: 12px;
+}
+
+.letter-envelope p {
+    color: #8a777e;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Janela da carta */
+
+.letter-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(57, 40, 47, 0.75);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.letter-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter-modal-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 620px;
+
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 55px 50px;
+
+    text-align: center;
+
+    background: #fffaf5;
+
+    border-radius: 28px;
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(20px) scale(0.95);
+
+    transition: transform 0.35s ease;
+}
+
+.letter-modal.active .letter-modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.letter-modal-close {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1dfe5;
+
+    color: #85576a;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.letter-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-envelope-icon {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.modal-letter-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a26d80;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.letter-modal-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 500;
+    color: #514049;
+    margin-bottom: 30px;
+}
+
+.modal-letter-text {
+    color: #76666d;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.modal-heart {
+    margin-top: 30px;
+    font-size: 30px;
+    color: #b56f89;
+}
+
+
+/* Celular */
+
+@media (max-width: 700px) {
+
+    .letters-section {
+        padding: 80px 20px;
+    }
+
+    .letters-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .letter-envelope {
+        padding: 35px 25px;
+    }
+
+    .letter-modal {
+        padding: 15px;
+    }
+
+    .letter-modal-card {
+        padding: 50px 25px 40px;
+        max-height: 90vh;
+    }
+
+    .modal-letter-text {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+/* Nossa música */
+
+.music-section {
+    padding: 110px 24px;
+    text-align: center;
+    position: relative;
+}
+
+.music-card {
+    width: min(600px, 100%);
+    margin: 45px auto 0;
+    padding: 40px 35px;
+    background: rgba(255, 250, 246, 0.82);
+    border: 1px solid rgba(181, 111, 137, 0.15);
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(120, 80, 100, 0.10);
+    backdrop-filter: blur(8px);
+}
+
+.music-disc {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e5a9bb, #b56f89);
+    font-size: 34px;
+
+    box-shadow:
+        0 10px 25px rgba(181, 111, 137, 0.25);
+
+    animation: musicFloat 3s ease-in-out infinite;
+}
+
+@keyframes musicFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.music-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #4b3b43;
+}
+
+.music-info p {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #8c747d;
+}
+
+.music-card audio {
+    width: 100%;
+    margin-top: 28px;
+}
+
+.music-message {
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #765e68;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+
+    .music-section {
+        padding: 80px 20px;
+    }
+
+    .music-card {
+        padding: 30px 22px;
+        border-radius: 24px;
+    }
+
+    .music-info h3 {
+        font-size: 27px;
+    }
+}
+
+/* Contador */
+
+.countdown-section {
+    padding: 110px 24px;
+    text-align: center;
+    position: relative;
+}
+
+.countdown-card {
+    width: min(700px, 100%);
+    margin: 45px auto 0;
+    padding: 38px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    background: rgba(255, 250, 246, 0.82);
+    border: 1px solid rgba(181, 111, 137, 0.15);
+    border-radius: 28px;
+
+    box-shadow: 0 20px 50px rgba(120, 80, 100, 0.10);
+    backdrop-filter: blur(8px);
+}
+
+.countdown-item {
+    min-width: 100px;
+}
+
+.countdown-item span {
+    display: block;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1;
+
+    color: #b56f89;
+}
+
+.countdown-item small {
+    display: block;
+    margin-top: 10px;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: #8c747d;
+}
+
+.countdown-separator {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #d2a1b1;
+    margin-bottom: 18px;
+}
+
+.countdown-message {
+    margin-top: 25px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+
+    color: #765e68;
+}
+
+@media (max-width: 600px) {
+
+    .countdown-section {
+        padding: 80px 18px;
+    }
+
+    .countdown-card {
+        gap: 5px;
+        padding: 30px 12px;
+    }
+
+    .countdown-item {
+        min-width: 68px;
+    }
+
+    .countdown-item span {
+        font-size: 32px;
+    }
+
+    .countdown-item small {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .countdown-separator {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+}
+
+.reunion-date {
+    margin-top: 14px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #9b7181;
+    font-weight: 500;
+}
+
+/* Gatinho decorativo */
+
+.decoration-cat {
+    position: absolute;
+    width: 120px;
+    left: 8%;
+    bottom: 12%;
+    z-index: 1;
+
+    animation: catFloat 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes catFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .decoration-cat {
+        width: 85px;
+        left: 4%;
+        bottom: 8%;
+    }
+
+}
+
+/* Segundo gatinho - canto superior direito */
+
+.decoration-cat-right {
+    left: auto;
+    right: 7%;
+    top: 10%;
+    bottom: auto;
+
+    animation: catFloatRight 4.5s ease-in-out infinite;
+}
+
+@keyframes catFloatRight {
+
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .decoration-cat-right {
+        width: 85px;
+        right: 4%;
+        top: 7%;
+    }
+
+}
+
+/* Ursinho - seção da carta */
+
+.letter-section {
+    position: relative;
+}
+
+.decoration-bear-letter {
+    position: absolute;
+
+    width: 145px;
+
+    left: 7%;
+    bottom: 8%;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 10px 12px rgba(90, 60, 50, 0.12));
+
+    animation: bearLetterFloat 4.5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes bearLetterFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .decoration-bear-letter {
+        width: 95px;
+        left: 3%;
+        bottom: 5%;
+    }
+
+}
+
+/* Gatinho - Nossa história */
+
+.story-section {
+    position: relative;
+}
+
+.decoration-story-cat {
+    position: absolute;
+
+    width: 125px;
+
+    right: 6%;
+    top: 12%;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 8px 10px rgba(120, 80, 100, 0.12));
+
+    animation: storyCatFloat 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes storyCatFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(-2deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .decoration-story-cat {
+        width: 85px;
+        right: 3%;
+        top: 8%;
+    }
+
+}
+
+/* Gatinho - Nossas memórias */
+
+.memories-section {
+    position: relative;
+}
+
+.decoration-memory-cat {
+    position: absolute;
+
+    width: 115px;
+
+    left: 5%;
+    bottom: 7%;
+
+    z-index: 3;
+
+    filter: drop-shadow(0 8px 10px rgba(120, 80, 100, 0.12));
+
+    animation: memoryCatFloat 4.3s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes memoryCatFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .decoration-memory-cat {
+        width: 80px;
+        left: 2%;
+        bottom: 4%;
+    }
+
+}
+/* Beijinho - Cartinhas */
+
+.letters-section {
+    position: relative;
+}
+
+.decoration-kiss {
+    position: absolute;
+
+    width: 105px;
+
+    right: 7%;
+    top: 8%;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 8px 10px rgba(150, 80, 100, 0.12));
+
+    animation: kissFloat 3.8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes kissFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(-5deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .decoration-kiss {
+        width: 70px;
+        right: 3%;
+        top: 5%;
+    }
+
+}
